@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/util
+    https://www.springframework.org/schema/util/spring-util.xsd">
+
+<!--    <bean id="music" class="ru.maxima.spring.player.ClassicalMusic">-->
+<!--    </bean>-->
+
+    <bean id="ClassicalMusic" class="ru.maxima.spring.player.ClassicalMusic">
+    </bean>
+    <bean id="RockMusic" class="ru.maxima.spring.player.RockMusic">
+    </bean>
+    <bean id="RapMusic" class="ru.maxima.spring.player.RapMusic">
+    </bean>
+
+
+    <bean id="musicList" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="ClassicalMusic" />
+                <ref bean="RockMusic" />
+                <ref bean="RapMusic" />
+            </list>
+        </constructor-arg>
+    </bean>
+
+
+    <!--    <context:properties-placeholder location="classpath:musicPlayer.properties"/>-->
+
+    <!--    <bean id="testBean" class="ru.maxima.spring.TestBean">-->
+    <!--        <constructor-arg value="Vlad"  />-->
+    <!--    </bean>-->
+
+
+    <!--    <bean id="musicPlayer" class ="ru.maxima.spring.player.MusicPlayer">-->
+    <!--    <constructor-arg ref="music"/>-->
+    <!--    </bean>-->
+</beans>
